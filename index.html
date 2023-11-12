@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>CALCULATOR</title>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="calculator.png">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+  <div>
+    <form name="formcalc">
+      <b><label>Loan</label></b>
+      <input type="number" name="txtnum1" placeholder="Enter the number">
+      <br>
+      <b><label>Months/Installment</label></b>
+      <input type="number" name="txtnum2" placeholder="Enter the number">
+      <br>
+      <b><label>Monthly Amortization</label></b>
+      <input type="text" name="txtres" readonly>
+      <br>
+      <input type="button" value="Calculate" onClick="sumValues()">
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    function sumValues() {
+      var loan = Number(document.getElementsByName("txtnum1")[0].value);
+      var monthsInstallment = Number(document.getElementsByName("txtnum2")[0].value);
+      var monthlyAmortization = Math.floor(loan / monthsInstallment);
+      document.getElementsByName("txtres")[0].value = monthlyAmortization;
+    }
+  </script>
+</body>
+</html>
